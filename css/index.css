@@ -1,0 +1,54 @@
+body {
+	padding-bottom: 80px;
+}
+
+footer {
+	position: fixed;
+	height: 80px;
+	bottom: 0;
+	z-index: 9999;
+	width: 100%;
+	text-align: center;
+	background-color: #bebebe;
+	font-size:2rem;
+	padding:.8rem;
+}
+
+.numSelect {
+	width: 150px;
+}
+
+.taskLabel {
+	font-size:2rem;
+	padding-left:2rem;
+}
+
+.taskTotal {
+	font-size:2rem;
+	text-align:right;
+	font-weight: bold;
+	padding-right:2rem;
+}
+
+.checkbox label:after, .radio label:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.checkbox, .radio {
+	position: relative;
+	display: inline-block;
+	border: 1px solid #a9a9a9;
+	border-radius: .25em;
+	width: 1.3em;
+	height: 1.3em;
+	float: left;
+	margin-right: .5em;
+}
+
+.sumBox {
+	font-size:2rem;
+	text-align:right;
+	padding-right:.8rem;
+}

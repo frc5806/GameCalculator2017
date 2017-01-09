@@ -1,0 +1,1 @@
+A simple web application for calculating your alliance's match points and ranking points acquired from a given match.

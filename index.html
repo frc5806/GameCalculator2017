@@ -3,7 +3,7 @@
 <head>
 	<title>Game Calculator</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="index.css">
 
 </head>
 
@@ -12,21 +12,47 @@
 		<h1>FRC Steamworks Game Calculator</h1>
 
 		<hr>
+		
+		<div class="row">
+			<div class="col-xs-6">
+				<form>
+					<div class="form-group">
+						<label for="matchResult">Select Match Result:</label>
+						<select class="form-control" id="matchResult">
+							<option>Win</option>
+							<option>Loss</option>
+							<option>Tie</option>
+						</select>
+					</div>
+				</form>
+			</div>
+			<div class="col-xs-6">
+				<form>
+					<div class="form-group">
+						<label for="matchFormat">Select Match Format:</label>
+						<select class="form-control" id="matchFormat">
+							<option>Qualification</option>
+							<option>Playoff</option>
+						</select>
+					</div>
+				</form>
+			</div>
+		</div>
 
 		<h2>Autonomous</h2>
 
-		<div class="panel panel-default" id="reachAuto">
+		<div class="panel panel-default" id="crossBaseline">
 			<div class="panel-body row">
 				<div class="col-xs-5">
 					<div class="input-group">
 						<span class="input-group-btn">
-							<button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="reachAuto">
+							<button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="crossBaseline">
 								<span class="glyphicon glyphicon-minus"></span>
 							</button>
 						</span>
-						<input type="text" name="reachAuto" class="form-control input-number" value="0" min="0" max="3">
+						<input type="text" name="crossBaseline" class="form-control input-number" value="0" min="0" max="3">
 						<span class="input-group-btn">
-							<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="reachAuto">
+							<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="crossBaseline">
 								<span class="glyphicon glyphicon-plus"></span>
 							</button>
 						</span>
@@ -41,18 +67,18 @@
 			</div>
 		</div>
 
-		<div class="panel panel-default" id="crossAuto">
+		<div class="panel panel-default" id="lowAuto">
 			<div class="panel-body row">
 				<div class="col-xs-5">
 					<div class="input-group">
 						<span class="input-group-btn">
-							<button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="crossAuto">
+							<button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="lowAuto">
 								<span class="glyphicon glyphicon-minus"></span>
 							</button>
 						</span>
-						<input type="text" name="crossAuto" class="form-control input-number" value="0" min="0" max="10">
+						<input type="text" name="lowAuto" class="form-control input-number" value="0" min="0" max="70">
 						<span class="input-group-btn">
-							<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="crossAuto">
+							<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="lowAuto">
 								<span class="glyphicon glyphicon-plus"></span>
 							</button>
 						</span>
@@ -68,18 +94,18 @@
 		</div>
 
 
-		<div class="panel panel-default" id="lowGoalAuto">
+		<div class="panel panel-default" id="highAuto">
 			<div class="panel-body row">
 				<div class="col-xs-5">
 					<div class="input-group">
 						<span class="input-group-btn">
-							<button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="lowGoalAuto">
+							<button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="highAuto">
 								<span class="glyphicon glyphicon-minus"></span>
 							</button>
 						</span>
-						<input type="text" name="lowGoalAuto" class="form-control input-number" value="0" min="0" max="10">
+						<input type="text" name="highAuto" class="form-control input-number" value="0" min="0" max="150">
 						<span class="input-group-btn">
-							<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="lowGoalAuto">
+							<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="highAuto">
 								<span class="glyphicon glyphicon-plus"></span>
 							</button>
 						</span>
@@ -94,18 +120,18 @@
 			</div>
 		</div>
 
-		<div class="panel panel-default" id="highGoalAuto">
+		<div class="panel panel-default" id="rotorsAuto">
 			<div class="panel-body row">
 				<div class="col-xs-5">
 					<div class="input-group">
 						<span class="input-group-btn">
-							<button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="highGoalAuto">
+							<button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="rotorsAuto">
 								<span class="glyphicon glyphicon-minus"></span>
 							</button>
 						</span>
-						<input type="text" name="highGoalAuto" class="form-control input-number" value="0" min="0" max="999">
+						<input type="text" name="rotorsAuto" class="form-control input-number" value="0" min="0" max="4">
 						<span class="input-group-btn">
-							<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="highGoalAuto">
+							<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="rotorsAuto">
 								<span class="glyphicon glyphicon-plus"></span>
 							</button>
 						</span>
@@ -121,7 +147,14 @@
 		</div>
 
 		<div class="row">
-			<div class="col-xs-8"></div>
+			<div class="col-xs-4">
+				<div class="panel panel-default sumBox">
+					<div class="panel-body">
+						Autonomous kPa Total: <b><span id="autoPressureSum">0</span></b>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-4"></div>
 			<div class="col-xs-4">
 				<div class="panel panel-default sumBox">
 					<div class="panel-body">
@@ -135,18 +168,18 @@
 
 		<h2>Teleop</h2>
 
-		<div class="panel panel-default" id="crossTeleop">
+		<div class="panel panel-default" id="lowTeleop">
 			<div class="panel-body row">
 				<div class="col-xs-5">
 					<div class="input-group">
 						<span class="input-group-btn">
-							<button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="crossTeleop">
+							<button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="lowTeleop">
 								<span class="glyphicon glyphicon-minus"></span>
 							</button>
 						</span>
-						<input type="text" name="crossTeleop" class="form-control input-number" value="0" min="0" max="999">
+						<input type="text" name="lowTeleop" class="form-control input-number" value="0" min="0" max="70">
 						<span class="input-group-btn">
-							<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="crossTeleop">
+							<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="lowTeleop">
 								<span class="glyphicon glyphicon-plus"></span>
 							</button>
 						</span>
@@ -161,18 +194,18 @@
 			</div>
 		</div>
 
-		<div class="panel panel-default" id="lowGoalTeleop">
+		<div class="panel panel-default" id="highTeleop">
 			<div class="panel-body row">
 				<div class="col-xs-5">
 					<div class="input-group">
 						<span class="input-group-btn">
-							<button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="lowGoalTeleop">
+							<button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="highTeleop">
 								<span class="glyphicon glyphicon-minus"></span>
 							</button>
 						</span>
-						<input type="text" name="lowGoalTeleop" class="form-control input-number" value="0" min="0" max="999">
+						<input type="text" name="highTeleop" class="form-control input-number" value="0" min="0" max="150">
 						<span class="input-group-btn">
-							<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="lowGoalTeleop">
+							<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="highTeleop">
 								<span class="glyphicon glyphicon-plus"></span>
 							</button>
 						</span>
@@ -188,18 +221,18 @@
 		</div>
 
 
-		<div class="panel panel-default" id="highGoalTeleop">
+		<div class="panel panel-default" id="rotorsTeleop">
 			<div class="panel-body row">
 				<div class="col-xs-5">
 					<div class="input-group">
 						<span class="input-group-btn">
-							<button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="highGoalTeleop">
+							<button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="rotorsTeleop">
 								<span class="glyphicon glyphicon-minus"></span>
 							</button>
 						</span>
-						<input type="text" name="highGoalTeleop" class="form-control input-number" value="0" min="0" max="999">
+						<input type="text" name="rotorsTeleop" class="form-control input-number" value="0" min="0" max="4">
 						<span class="input-group-btn">
-							<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="highGoalTeleop">
+							<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="rotorsTeleop">
 								<span class="glyphicon glyphicon-plus"></span>
 							</button>
 						</span>
@@ -214,18 +247,18 @@
 			</div>
 		</div>
 
-		<div class="panel panel-default" id="challengedTeleop">
+		<div class="panel panel-default" id="touchpads">
 			<div class="panel-body row">
 				<div class="col-xs-5">
 					<div class="input-group">
 						<span class="input-group-btn">
-							<button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="challengedTeleop">
+							<button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="touchpads">
 								<span class="glyphicon glyphicon-minus"></span>
 							</button>
 						</span>
-						<input type="text" name="challengedTeleop" class="form-control input-number" value="0" min="0" max="3">
+						<input type="text" name="touchpads" class="form-control input-number" value="0" min="0" max="3">
 						<span class="input-group-btn">
-							<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="challengedTeleop">
+							<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="touchpads">
 								<span class="glyphicon glyphicon-plus"></span>
 							</button>
 						</span>
@@ -240,40 +273,19 @@
 			</div>
 		</div>
 
-		<!-->
-		<div class="panel panel-default" id="scaledTeleop">
-			<div class="panel-body row">
-				<div class="col-xs-5">
-					<div class="input-group">
-						<span class="input-group-btn">
-							<button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="scaledTeleop">
-								<span class="glyphicon glyphicon-minus"></span>
-							</button>
-						</span>
-						<input type="text" name="scaledTeleop" class="form-control input-number" value="0" min="0" max="3">
-						<span class="input-group-btn">
-							<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="scaledTeleop">
-								<span class="glyphicon glyphicon-plus"></span>
-							</button>
-						</span>
-					</div>
-				</div>
-				<div class="col-xs-5 taskLabel">
-					Scaled the tower
-				</div>
-				<div class="col-xs-2 taskTotal">
-					0
-				</div>
-			</div>
-		</div>
-		</!-->
-
 		<div class="row">
-			<div class="col-xs-8"></div>
 			<div class="col-xs-4">
 				<div class="panel panel-default sumBox">
 					<div class="panel-body">
-						Teleop Total: <b><span id="teleopSum">0</span></b>
+						Teleop kPa Total: <b><span id="teleopPressureSum">0</span></b>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-4"></div>
+			<div class="col-xs-4">
+				<div class="panel panel-default sumBox">
+					<div class="panel-body">
+						Teleop Point Total: <b><span id="teleopSum">0</span></b>
 					</div>
 				</div>
 			</div>
@@ -285,15 +297,21 @@
 			<div class="row">
 					<div class="panel panel-default">
 						<div class="panel-body">
-							Total: <b><span id="totalSum">0</span></b>
+							<div class="row">
+								<div class="col-md-6">
+									Match Points: <b><span id="matchSum">0</span></b>
+								</div>
+								<div class="col-md-6">
+									Ranking Points: <b><span id="rankingSum">0</span></b>
+								</div>
 						</div>
 					</div>
 			</div>
 		</div>
 	</footer>
 
-	<script src="js/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script src="js/index.js"></script>
+	<script src="index.js"></script>
 </body>
 </html>
